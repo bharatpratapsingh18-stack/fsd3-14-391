@@ -1,9 +1,31 @@
-import http from "http";
+import http, { STATUS_CODES } from "http";
+//import * as teams from "teams.js";
+import { getAllTeams } from "./teams.js";
 
-const server = http.createServer((req, res)=>{
-    res.end("<h1>SIH Internal</h1>");
-});
+const PORT = 5000;
 
-server.listen(5000, () => {
-  console.log("Server is running");
+const sendJson = (res, statusCode, data) => {
+  res.writeHead(statusCode, { "content-type": "application/json" });
+  res.end(data === "undefined" ? "" : JSON.stringify(data));
+};
+
+const parseJSONBody = (req) => {
+  new Promise((resolve, reject) => {
+    let body = "";
+    req.on("data", (chunk) => {
+      body += chunk.toString();
+    });
+    req.on("end", () => {
+      try {
+        resolve(body ? JSON.parse(body) : {});
+      } catch (error) {
+        reject(error);
+      }
+    });
+  });
+};
+const server = http.createServer((req, res) => {});
+
+server.listen(PORT, () => {
+  console.log("SIH Server is running at", PORT);
 });
