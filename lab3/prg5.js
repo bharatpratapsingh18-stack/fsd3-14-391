@@ -9,6 +9,6 @@ const server = http.createServer((req, res) => {
     company: "Samsung",
   };
   res.end(JSON.stringify(product));
-});
+});     
 
 server.listen(3000, () => console.log("server is running..."));

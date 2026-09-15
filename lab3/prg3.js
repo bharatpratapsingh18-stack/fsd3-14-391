@@ -25,4 +25,4 @@ const server = http.createServer((req,res)=>{
     console.log("welcome to the club");
 })
 
-server.listen(4444,()=> console.log("Server is intitalizing"));
+server.listen(4444,()=> console.log("Server is intitalizing"));    
