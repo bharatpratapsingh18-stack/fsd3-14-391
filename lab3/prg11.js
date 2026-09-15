@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
 
     //add data to database
     res.writeHead(201,{
-      "content-type":"application/json",
+      "content-type":"application/json",   
     });
     //send back the status
     res.end(
