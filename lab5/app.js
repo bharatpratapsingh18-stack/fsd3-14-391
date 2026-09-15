@@ -1,8 +1,11 @@
 import express from 'express'
 
 const app =express();
-app.get("/",(req,res)=>{
+app.get("",(req,res)=>{
     res.send("<h1>Hello Express");
 });
+app.use("*",(req,res)=>{
+    res.send("route not found");
+})
 
 app.listen(3000,()=>console.log("server is Running"));
