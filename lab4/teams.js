@@ -32,7 +32,7 @@ export const updateTeamById = (id, updateTeam) => {
   if (!team) return null;
   Object.assign(team, updateTeam);
   return team;
-};
+};         
 
 export const deleteTeam = (id) => {
   const index = teams.findIndex((team) => team.id === id);
