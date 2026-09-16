@@ -9,6 +9,6 @@ const findSum = (a,b) => {
 };
 const sum = (a,b) => a+b;
 sayHello("Anuj Sharma");
-sayHi("Manju Sinha");
+sayHi("Manju Sinha");    
 console.log("sum=",findSum(5,6));
 console.log("sum=",sum(5,6));
