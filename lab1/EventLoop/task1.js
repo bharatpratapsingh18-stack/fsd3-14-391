@@ -11,7 +11,7 @@ const f2 = () => {
   console.log("f2 ends");
 };
 
-const f3 = () => {
+const f3 = () => {    
   console.log("f3 starts"); 
   console.log("f3 running");
   console.log("f3 end");
