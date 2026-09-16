@@ -10,4 +10,4 @@ import {mkdir , rm} from "fs/promises";
 // await rm("docs/resumes/data",{recursive: true});
 
 //removes main folder and sub folder alss
-await rm("docs",{recursive: true});
+await rm("docs",{recursive: true});     
