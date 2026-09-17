@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueWave | About Us</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #172033;
+        }
+
+        /* Navbar */
+        nav {
+            height: 75px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .logo span {
+            color: #111827;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #2563eb;
+        }
+
+        .nav-btn {
+            background: #2563eb;
+            color: white;
+            padding: 11px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(135deg, #eef4ff, #ffffff);
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .page-hero h1 span {
+            color: #2563eb;
+        }
+
+        .page-hero p {
+            color: #667085;
+            font-size: 18px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-image {
+            width: 45%;
+            height: 400px;
+            background: #dbeafe;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 150px;
+            box-shadow: 0 15px 40px rgba(37,99,235,0.12);
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about-content h2 span {
+            color: #2563eb;
+        }
+
+        .about-content p {
+            color: #667085;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        /* Mission */
+        .section {
+            padding: 60px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #667085;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #667085;
+            line-height: 1.6;
+        }
+
+        /* Stats */
+        .stats {
+            background: #2563eb;
+            color: white;
+            padding: 55px 8%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            gap: 20px;
+        }
+
+        .stat h2 {
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        .stat p {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            padding: 50px 8% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #9ca3af;
+            line-height: 1.7;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #374151;
+            padding-top: 20px;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            nav ul {
+                display: none;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .about-image {
+                width: 100%;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-hero h1 {
+                font-size: 38px;
+            }
+
+            .about-image {
+                height: 280px;
+                font-size: 100px;
+            }
+
+            .stats,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Blue<span>Wave</span></div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#offers">Offers</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+        </ul>
+
+        <a href="index.html#products" class="nav-btn">Shop Now</a>
+    </nav>
+
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>About <span>BlueWave</span></h1>
+        <p>Connecting people with better sound and smarter technology.</p>
+    </section>
+
+
+    <!-- About -->
+    <section class="about">
+
+        <div class="about-image">
+            🎧
+        </div>
+
+        <div class="about-content">
+            <h2>We Make Wireless <span>Better</span></h2>
+
+            <p>
+                BlueWave is a modern Bluetooth technology brand focused
+                on bringing high-quality wireless devices to everyone.
+            </p>
+
+            <p>
+                From powerful headphones and crystal-clear earbuds to
+                portable Bluetooth speakers, our products are designed
+                for people who want great sound without complicated
+                technology.
+            </p>
+
+            <p>
+                We combine modern design, reliable connectivity and
+                powerful performance to create products that fit
+                perfectly into your everyday lifestyle.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- Mission -->
+    <section class="section">
+
+        <div class="section-title">
+            <h2>What We Believe</h2>
+            <p>Our values guide everything we create.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>Our Mission</h3>
+                <p>
+                    To make high-quality wireless technology accessible,
+                    reliable and enjoyable for everyone.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💡</div>
+                <h3>Innovation</h3>
+                <p>
+                    We continuously explore new technology to deliver
+                    better performance and smarter experiences.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">❤️</div>
+                <h3>Customer First</h3>
+                <p>
+                    We focus on quality products, excellent service and
+                    creating long-lasting customer relationships.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Statistics -->
+    <section class="stats">
+
+        <div class="stat">
+            <h2>50K+</h2>
+            <p>Happy Customers</p>
+        </div>
+
+        <div class="stat">
+            <h2>100+</h2>
+            <p>Products</p>
+        </div>
+
+        <div class="stat">
+            <h2>4.8★</h2>
+            <p>Average Rating</p>
+        </div>
+
+        <div class="stat">
+            <h2>24/7</h2>
+            <p>Customer Support</p>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h3 class="logo">BlueWave</h3>
+                <p>
+                    Your destination for premium Bluetooth devices,
+                    wireless audio and smart technology.
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Headphones</a></li>
+                    <li><a href="#">Earbuds</a></li>
+                    <li><a href="#">Speakers</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <p>Email: support@bluewave.com</p>
+                <p>Phone: +91 98765 43210</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 BlueWave. All Rights Reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>
